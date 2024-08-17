@@ -12,6 +12,7 @@ public final class AdminTools extends JavaPlugin {
         getCommand("attptome").setExecutor(new tpToMeCommand(this));
         getCommand("attpto").setExecutor(new tpToCommand());
         getCommand("atgamemode").setExecutor(new gameModeCommand(this));
+        getCommand("atinventoryclean").setExecutor(new inventCleanCommand(this));
     }
 
     @Override
