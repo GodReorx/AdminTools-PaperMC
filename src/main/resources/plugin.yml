@@ -1,5 +1,5 @@
 name: AdminTools
-version: '1.0.0'
+version: '1.0.3'
 main: me.GodReorx.adminTools.AdminTools
 description: Este plugin es un conjunto de herramientas para admins
 api-version: '1.21'
