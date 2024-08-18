@@ -36,6 +36,11 @@ commands:
     usage: /atinventoryclean <Player|All>
     permission: admintools
     permission-message: No tienes permiso para usarlo!
+  atvanish:
+    description: "Comando para volverte invisible o visible a ojos de los jugadores"
+    usage: /atvanish
+    permission: admintools
+    permission-message: No tienes permiso para usarlo!
 
 permissions:
   admintools:
