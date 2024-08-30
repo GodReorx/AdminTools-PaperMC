@@ -13,11 +13,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class inventCleanCommand implements CommandExecutor {
+public class InventCleanCommand implements CommandExecutor {
 
     private AdminTools mainClass;
 
-    public inventCleanCommand(AdminTools adminTools) {
+    public InventCleanCommand(AdminTools adminTools) {
         this.mainClass = adminTools;
     }
 

@@ -14,11 +14,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class gameModeCommand implements CommandExecutor {
+public class GameModeCommand implements CommandExecutor {
 
     private AdminTools mainClass;
 
-    public gameModeCommand(AdminTools adminTools) {
+    public GameModeCommand(AdminTools adminTools) {
         this.mainClass = adminTools;
     }
 

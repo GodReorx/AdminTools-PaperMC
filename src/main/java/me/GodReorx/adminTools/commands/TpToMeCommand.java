@@ -8,13 +8,13 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import static me.GodReorx.adminTools.errorControl.checkSenderArgs.senderArgsCheck;
+import static me.GodReorx.adminTools.errorControl.CheckSenderArgs.senderArgsCheck;
 
-public class tpToMeCommand implements CommandExecutor {
+public class TpToMeCommand implements CommandExecutor {
 
     private AdminTools mainClass;
 
-    public tpToMeCommand(AdminTools main){
+    public TpToMeCommand(AdminTools main){
         this.mainClass = main;
     }
     @Override

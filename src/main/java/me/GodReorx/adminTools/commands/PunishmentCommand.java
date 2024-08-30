@@ -7,9 +7,9 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import static me.GodReorx.adminTools.errorControl.checkSenderArgs.senderArgsCheck;
+import static me.GodReorx.adminTools.errorControl.CheckSenderArgs.senderArgsCheck;
 
-public class punishmentCommand implements CommandExecutor {
+public class PunishmentCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args){

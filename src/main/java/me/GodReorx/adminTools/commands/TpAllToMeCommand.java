@@ -15,12 +15,12 @@ import java.util.List;
 import java.util.Random;
 
 
-public class tpAllToMeCommand implements CommandExecutor{
+public class TpAllToMeCommand implements CommandExecutor{
 
     private AdminTools mainClass;
     private BukkitTask teleportTask;
 
-    public tpAllToMeCommand (AdminTools main){
+    public TpAllToMeCommand(AdminTools main){
         this.mainClass = main;
     }
     @Override

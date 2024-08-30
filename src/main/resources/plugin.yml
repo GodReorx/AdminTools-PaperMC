@@ -1,5 +1,5 @@
 name: AdminTools
-version: '1.0.3'
+version: '1.0.5'
 main: me.GodReorx.adminTools.AdminTools
 description: Este plugin es un conjunto de herramientas para admins
 api-version: '1.21'
@@ -39,6 +39,16 @@ commands:
   atvanish:
     description: "Comando para volverte invisible o visible a ojos de los jugadores"
     usage: /atvanish
+    permission: admintools
+    permission-message: No tienes permiso para usarlo!
+  atsaveplayer:
+    description: "Comando para guardar toda la información del jugador"
+    usage: /atsaveplayer <Player>
+    permission: admintools
+    permission-message: No tienes permiso para usarlo!
+  atloadplayer:
+    description: "Comando para recuperar toda la información del jugador"
+    usage: /atloadplayer <Player>
     permission: admintools
     permission-message: No tienes permiso para usarlo!
 

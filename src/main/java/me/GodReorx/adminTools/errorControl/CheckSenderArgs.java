@@ -4,7 +4,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class checkSenderArgs {
+public class CheckSenderArgs {
+
     public static boolean senderArgsCheck(CommandSender sender, String[] args){
         if(!(sender instanceof Player)){
             sender.sendMessage("No se puede ejecutar desde consola.");

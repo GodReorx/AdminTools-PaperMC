@@ -10,13 +10,13 @@ import org.bukkit.entity.Player;
 import java.util.HashMap;
 import java.util.Map;
 
-public class vanishCommand implements CommandExecutor {
+public class VanishCommand implements CommandExecutor {
 
     private final AdminTools mainClass;
 
     private Map<Player, String> vanishSwitch = new HashMap<>();
 
-    public vanishCommand(AdminTools adminTools){
+    public VanishCommand(AdminTools adminTools){
         this.mainClass = adminTools;
     }
 
