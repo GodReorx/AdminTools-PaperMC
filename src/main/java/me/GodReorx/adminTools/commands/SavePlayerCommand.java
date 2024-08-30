@@ -2,7 +2,7 @@ package me.GodReorx.adminTools.commands;
 
 import com.google.gson.Gson;
 import me.GodReorx.adminTools.AdminTools;
-import me.GodReorx.adminTools.jsonClass.PlayerCapsule;
+import me.GodReorx.adminTools.jsonClass.PlayerInfo;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -40,9 +40,9 @@ public class SavePlayerCommand implements CommandExecutor {
             sender.sendMessage("Jugador no encontrado, comprueba el nombre.");
             return false;
         }
-        PlayerCapsule playerCapsule = new PlayerCapsule(targetPlayer);
-        String playerJson = new Gson().toJson(playerCapsule);
-        Path path = mainClass.getDataPath().resolve(targetPlayer.getUniqueId().toString() + ".json").toAbsolutePath();
+        PlayerInfo playerInfo = new PlayerInfo(targetPlayer);
+        String playerJson = new Gson().toJson(playerInfo);
+        Path path = mainClass.getDataPath().resolve(targetPlayer.getUniqueId() + ".json").toAbsolutePath();
         try {
             Files.writeString(path,playerJson);
         } catch (IOException e) {

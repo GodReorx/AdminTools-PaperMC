@@ -42,20 +42,15 @@ public class LoadPlayerCommand implements CommandExecutor {
             sender.sendMessage("Jugador no encontrado, comprueba el nombre.");
             return false;
         }
-        //ToDo: no funciona, revisar
         Gson gson = new Gson();
-        Path path = mainClass.getDataPath().resolve(targetPlayer.getUniqueId().toString() + ".json").toAbsolutePath();
-        targetPlayer.sendMessage("Path: " + path);
+        Path path = mainClass.getDataPath().resolve(targetPlayer.getUniqueId() + ".json").toAbsolutePath();
         try{
             String jsonFile = Files.readString(path);
-            targetPlayer.sendMessage("contenido del json " + jsonFile);
-            //Falla aqui, es culpa de usar dos tipos de capsulas
             PlayerInfo playerInfo = gson.fromJson(jsonFile, PlayerInfo.class);
-            targetPlayer.sendMessage("NAME" + playerInfo.getName() + " XP: " + playerInfo.getXP());
-            targetPlayer.sendMessage("Location: " + playerInfo.getLocation() + " Inventory: " + playerInfo.getInventory());
-                targetPlayer.setExp(targetPlayer.getExp());
-                targetPlayer.getInventory().setContents(InventoryConverter.stringToInventory(playerInfo.getInventory()).getContents());
-                targetPlayer.teleport(LocationConverter.stringToLocation(playerInfo.getLocation()));
+            targetPlayer.setExp(targetPlayer.getExp());
+            targetPlayer.getInventory().setContents(InventoryConverter.stringToInventory(playerInfo.getInventory()));
+            targetPlayer.teleport(LocationConverter.stringToLocation(playerInfo.getLocation()));
+            Files.delete(path);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
