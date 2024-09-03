@@ -1,24 +1,11 @@
 package me.GodReorx.adminTools.commands;
 
-import org.bukkit.Bukkit;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import static me.GodReorx.adminTools.errorControl.CheckSenderArgs.senderArgsCheck;
+public class TpToCommand {
 
-public class TpToCommand implements CommandExecutor {
-
-    @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if(senderArgsCheck(sender,args)) {
-            Player adminPlayer = (Player) sender;
-            Player targetPlayer = Bukkit.getPlayer(args[0]);
-            adminPlayer.teleport(targetPlayer);
-            adminPlayer.sendMessage("Teleportado a " + targetPlayer.getName());
-            return true;
-        }
-    return false;
+    public static void execute (Player adminPlayer, Player targetPlayer){
+        adminPlayer.teleport(targetPlayer);
+        adminPlayer.sendMessage("Teleported to " + targetPlayer.getName());
     }
 }

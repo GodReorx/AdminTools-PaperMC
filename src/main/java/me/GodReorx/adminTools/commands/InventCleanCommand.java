@@ -2,10 +2,6 @@ package me.GodReorx.adminTools.commands;
 
 import me.GodReorx.adminTools.AdminTools;
 import org.bukkit.Bukkit;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
-import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -13,34 +9,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class InventCleanCommand implements CommandExecutor {
-
-    private AdminTools mainClass;
-
-    public InventCleanCommand(AdminTools adminTools) {
-        this.mainClass = adminTools;
-    }
-
-
-    @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-
-        if((sender instanceof Player) || (sender instanceof ConsoleCommandSender) || args.length == 1) {
-            Player targetPlayer = Bukkit.getPlayer(args[0]);
-            if (args[0].equalsIgnoreCase("all")) {
-                cleanAllInvent();
-                sender.sendMessage("Todos los inventarios vaciados.");
-                return true;
-            } else if (targetPlayer != null) {
-                targetPlayer.getInventory().clear();
-                sender.sendMessage("Inventario del jugador " + targetPlayer.getName() + " ha sido vaciado.");
-                return true;
-            }
+public class InventCleanCommand {
+    public static void execute (Player adminPlayer, String[] args, AdminTools adminTools){
+        Player targetPlayer = Bukkit.getPlayer(args[0]);
+        if (args[0].equalsIgnoreCase("all")) {
+            cleanAllInvent(adminTools);
+            adminPlayer.sendMessage("All inventories have been cleared.");
+        } else if (targetPlayer != null) {
+            targetPlayer.getInventory().clear();
+            adminPlayer.sendMessage("All items have been removed from " + targetPlayer.getName() + "'s inventory.");
+        } else {
+            adminPlayer.sendMessage("Player name not recognized. Please verify.");
         }
-        return false;
     }
 
-    private void cleanAllInvent() {
+    private static void cleanAllInvent(AdminTools adminTools) {
         List<Player> playerList = new ArrayList<>(Bukkit.getOnlinePlayers());
         new BukkitRunnable() {
             Random random = new Random();
@@ -57,6 +40,6 @@ public class InventCleanCommand implements CommandExecutor {
                     targetPlayer.getInventory().clear();
                 }
             }
-        }.runTaskTimer(mainClass, 0, 10);
+        }.runTaskTimer(adminTools, 0, 10);
     }
 }

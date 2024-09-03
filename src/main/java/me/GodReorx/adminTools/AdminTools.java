@@ -13,15 +13,17 @@ public final class AdminTools extends JavaPlugin {
             getDataFolder().mkdirs();
         }
 
-        getCommand("atpunish").setExecutor(new PunishmentCommand());
-        getCommand("attpalltome").setExecutor(new TpAllToMeCommand(this));
-        getCommand("attptome").setExecutor(new TpToMeCommand(this));
-        getCommand("attpto").setExecutor(new TpToCommand());
-        getCommand("atgamemode").setExecutor(new GameModeCommand(this));
-        getCommand("atinventoryclean").setExecutor(new InventCleanCommand(this));
-        getCommand("atvanish").setExecutor(new VanishCommand(this));
-        getCommand("atsaveplayer").setExecutor(new SavePlayerCommand(this));
-        getCommand("atloadplayer").setExecutor(new LoadPlayerCommand(this));
+        CommandManager commandManager = new CommandManager(this);
+
+        getCommand("atpunish").setExecutor(commandManager);
+        getCommand("attpalltome").setExecutor(commandManager);
+        getCommand("attptome").setExecutor(commandManager);
+        getCommand("attpto").setExecutor(commandManager);
+        getCommand("atgamemode").setExecutor(commandManager);
+        getCommand("atinventoryclean").setExecutor(commandManager);
+        getCommand("atvanish").setExecutor(commandManager);
+        getCommand("atsaveplayer").setExecutor(commandManager);
+        getCommand("atloadplayer").setExecutor(commandManager);
     }
 
     @Override

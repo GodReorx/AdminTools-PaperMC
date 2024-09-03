@@ -1,5 +1,5 @@
 name: AdminTools
-version: '1.0.5'
+version: '1.0.6'
 main: me.GodReorx.adminTools.AdminTools
 description: Este plugin es un conjunto de herramientas para admins
 api-version: '1.21'
@@ -7,52 +7,52 @@ authors: [ GodReorx ]
 
 commands:
   atpunish:
-    description: "Comando para lanzar un rayo divino y castigar a los jugadores"
+    description: "Smites a player with a divine bolt of lightning."
     usage: /atpunish <Player>
     permission: admintools
-    permission-message: No tienes permiso para usarlo!
+    permission-message: You do not have permission to use it!
   attpalltome:
-    description: "Comando para teleportar a todos los jugadores online al admin"
+    description: "Teleport all online players to the admin."
     usage: /attpalltome
     permission: admintools
-    permission-message: No tienes permiso para usarlo!
+    permission-message: You do not have permission to use it!
   attptome:
-    description: "Comando para teleportar a un jugador al admin"
+    description: "Teleport a specified player to the admin."
     usage: /attptome <Player>
     permission: admintools
-    permission-message: No tienes permiso para usarlo!
+    permission-message: You do not have permission to use it!
   attpto:
-    description: "Comando para teleportar al admin a un jugador"
+    description: "Teleport the admin to a specified player."
     usage: /attpto <Player>
     permission: admintools
-    permission-message: No tienes permiso para usarlo!
+    permission-message: You do not have permission to use it!
   atgamemode:
-    description: "Comando para modificar el modo de juego a un jugador o todos"
-    usage: /atgamemode <Player|All> <Creative|Survival|Adventure|Spectator>
+    description: "Changes the game mode of a player or all players."
+    usage: /atgamemode <Player | All> <Creative | Survival | Adventure | Spectator>
     permission: admintools
-    permission-message: No tienes permiso para usarlo!
+    permission-message: You do not have permission to use it!
   atinventoryclean:
-    description: "Comando para vaciar el inventario de un jugador o todos"
-    usage: /atinventoryclean <Player|All>
+    description: "Empties the inventory of a player or all players."
+    usage: /atinventoryclean <Player | All>
     permission: admintools
-    permission-message: No tienes permiso para usarlo!
+    permission-message: You do not have permission to use it!
   atvanish:
-    description: "Comando para volverte invisible o visible a ojos de los jugadores"
+    description: "Toggles the admin's visibility to other players."
     usage: /atvanish
     permission: admintools
-    permission-message: No tienes permiso para usarlo!
+    permission-message: You do not have permission to use it!
   atsaveplayer:
-    description: "Comando para guardar toda la información del jugador"
+    description: "Save player's name, UUID, location, inventory, and experience in a JSON format"
     usage: /atsaveplayer <Player>
     permission: admintools
-    permission-message: No tienes permiso para usarlo!
+    permission-message: You do not have permission to use it!
   atloadplayer:
-    description: "Comando para recuperar toda la información del jugador"
+    description: "Load location, inventory, and experience from JSON format"
     usage: /atloadplayer <Player>
     permission: admintools
-    permission-message: No tienes permiso para usarlo!
+    permission-message: You do not have permission to use it!
 
 permissions:
   admintools:
-    description: Permite el uso de los comandos del AdminTools
+    description: Allow the use of AdminTools commands.
     default: op
