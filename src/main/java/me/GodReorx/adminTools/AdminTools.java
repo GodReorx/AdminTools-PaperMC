@@ -24,6 +24,7 @@ public final class AdminTools extends JavaPlugin {
         getCommand("atvanish").setExecutor(commandManager);
         getCommand("atsaveplayer").setExecutor(commandManager);
         getCommand("atloadplayer").setExecutor(commandManager);
+        getCommand("atadminmode").setExecutor(commandManager);
     }
 
     @Override

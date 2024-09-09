@@ -21,12 +21,12 @@ public class CommandManager implements CommandExecutor {
         String commandName = command.getName();
 
         if(!(sender instanceof Player adminPlayer)){
-            sender.sendMessage("No se puede ejecutar desde consola.");
+            sender.sendMessage("The command is designed for in-game player use and is not accessible from the console interface.");
             return true;
         }
 
         if(!adminPlayer.isOp()){
-            adminPlayer.sendMessage("No tienes permisos para ejecutar el comando");
+            adminPlayer.sendMessage("Sorry, you can't use that command.");
             return true;
         }
 
@@ -52,8 +52,12 @@ public class CommandManager implements CommandExecutor {
                 VanishCommand.execute(adminPlayer, adminTools);
                 yield true;
             }
+            case "atadminmode" -> {
+                AdminModeCommand.execute(adminPlayer, adminTools);
+                yield true;
+            }
             default -> {
-                adminPlayer.sendMessage("ERROR: Comando incorrecto.");
+                adminPlayer.sendMessage("ERROR: The command you entered is invalid.");
                 yield false;
             }
         };
@@ -90,7 +94,7 @@ public class CommandManager implements CommandExecutor {
                 yield true;
             }
             default -> {
-                adminPlayer.sendMessage("ERROR: Comando incorrecto.");
+                adminPlayer.sendMessage("ERROR: The command you entered is invalid.");
                 yield false;
             }
         };
@@ -109,11 +113,11 @@ public class CommandManager implements CommandExecutor {
                 GameModeCommand.execute(adminPlayer, targetPlayer, args[1]);
                 return true;
             } else {
-                adminPlayer.sendMessage("Jugador no encontrado");
+                adminPlayer.sendMessage("Can't find that player.");
                 return false;
             }
         } else {
-            adminPlayer.sendMessage("ERROR: Comando incorrecto.");
+            adminPlayer.sendMessage("ERROR: The command you entered is invalid.");
             return false;
         }
     }

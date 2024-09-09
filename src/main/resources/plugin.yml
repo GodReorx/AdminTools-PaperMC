@@ -1,5 +1,5 @@
 name: AdminTools
-version: '1.0.6'
+version: '1.0.7'
 main: me.GodReorx.adminTools.AdminTools
 description: Este plugin es un conjunto de herramientas para admins
 api-version: '1.21'
@@ -49,6 +49,11 @@ commands:
   atloadplayer:
     description: "Load location, inventory, and experience from JSON format"
     usage: /atloadplayer <Player>
+    permission: admintools
+    permission-message: You do not have permission to use it!
+  atadminmode:
+    description: "Change to adminMode (creative, clean inventory and save information) and return to playerMode (restore all data)"
+    usage: /atadminmode
     permission: admintools
     permission-message: You do not have permission to use it!
 
